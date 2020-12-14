@@ -13,12 +13,12 @@ hdu=fits.open(archivo)
 #cargar seccion de datos del archivo
 datos=hdu[0].data
 #encabezado
-encabezado = hdu[0].header
+hdr = hdu[0].header
 #seleccionar informacion de espectros
 espectro=datos[0,:]
-coeff0=encabezado['COEFF0']
-coeff1=encabezado['COEFF1']
-Z=encabezado['Z']
+coeff0=hdr['COEFF0']
+coeff1=hdr['COEFF1']
+Z=hdr['Z']
 
 #corrección por longitud de onda
 j=np.arange(0,len(espectro)) #índice pixeles
